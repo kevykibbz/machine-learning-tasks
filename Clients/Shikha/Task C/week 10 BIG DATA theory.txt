@@ -1,0 +1,66 @@
+week 10
+
+hostname
+pwd
+ls -l
+ls -l /
+mkdir bdag55 (create directory)
+cd bdag55
+pwd
+gedit ex55.txt (add text in directory)
+cat ex55.txt (to see text in commands)
+cd .. (exit directory)
+cat bdag55/ex55.txt (see txt)
+
+cd bdag55 (get inside the directory)
+mkdir subdir55 (create sub directory inside the main directory)
+cd subdir55
+gedit subex5.txt (here we are inside subdirectory created inside main directory) 
+pwd
+cd .. (exit subdir)
+cd .. (exit directory)
+
+cat bdag55/ex55.txt >> bdag55/subdir55/subex5.txt
+cat bdag55/subdir55/subex5.txt (we can see the whole txt writen in both the directory together with this command)
+
+ls -l
+ls -l bdag55
+sudo mount -t vboxsf plsql \bdag55 (in this we have to edit new file we saved in C directory in our system by going to device - share folder -setting - transient- plus sign )
+
+*mv bdag5/mytest.csv bdag55* (exception command when by mistake new file is saved to wrong directory to we have to move to to right directory)
+
+ls -1 bdag55
+sudo jps
+hdfs dfs -ls l (no file will be shown because hadoop is not run so first run hadoop command then check again)
+sudo /home/cloudera/cloudera-manager --express --force (after is run fully it will give user and password)
+
+Go to cloudera live and go to cloudera manager come back to terminal
+
+sudo jps
+hdfs dfs -ls l (for user)it will show no item
+hdfs dfs -ls l / (showing the root files we will get items)
+ls -l bdag55 (to check the capacity of folder)
+hdfs dfs -mkdir hbdag55 (creating hadoop directory)
+
+sudo -u hdfs hdfs dfsadmin -safemode leave (when we get safe mode error we have to use this command to disable the safe made)
+
+sudo service hadoop-hdfs-datanode start
+sudo service hadoop-hdfs-journalnode start
+sudo service hadoop-hdfs-namenode start
+sudo service hadoop-hdfs-secondarynamenode start
+sudo service hadoop-httpfs start
+sudo service hbase-master start
+sudo service hbase-regionserver start
+sudo service hadoop-yarn-nodemanager start
+sudo service hadoop-yarn-resourcemanager start
+sudo service hadoop-mapreduce-historyserver start
+
+hdfs dfs -ls 
+
+go to cloudera live - hadoop- namenode -utilites - browse the file system - user - cloudera (file we created is visible now)
+
+hdfs dfs -put bdag55/ex55
+
+
+$sudo mount -t vboxsf plsql \bdag5
+$ ls -l bdag55/ex55.txt hbdag55/

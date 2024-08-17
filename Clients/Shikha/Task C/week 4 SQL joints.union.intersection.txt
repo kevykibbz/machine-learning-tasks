@@ -1,0 +1,668 @@
+SQL> create table emp12 (eid number(3),ename varchar2(15),eage number(2),did number(3));
+SP2-0640: Not connected
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> create table emp12 (eid number(3),ename varchar2(15),eage number(2),did number(3));
+
+Table created.
+
+SQL> create table sports (eid number(3),ename varchar2(12),eage number(2),did number(3));
+
+Table created.
+
+SQL> select * from emp12
+  2
+SQL> desc emp12;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(3)
+ ENAME                                              VARCHAR2(15)
+ EAGE                                               NUMBER(2)
+ DID                                                NUMBER(3)
+
+SQL> desc sports;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(3)
+ ENAME                                              VARCHAR2(12)
+ EAGE                                               NUMBER(2)
+ DID                                                NUMBER(3)
+
+SQL> insert into emp12 values(&eid,'&ename,'&eage,&did);
+Enter value for eid: 1
+Enter value for ename: a
+Enter value for eage: 23
+Enter value for did: 111
+old   1: insert into emp12 values(&eid,'&ename,'&eage,&did)
+new   1: insert into emp12 values(1,'a,'23,111)
+insert into emp12 values(1,'a,'23,111)
+                               *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> /
+Enter value for eid: 2
+Enter value for ename: b
+Enter value for eage: 34
+Enter value for did: 222
+old   1: insert into emp12 values(&eid,'&ename,'&eage,&did)
+new   1: insert into emp12 values(2,'b,'34,222)
+insert into emp12 values(2,'b,'34,222)
+                               *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> /
+Enter value for eid: 3
+Enter value for ename: c
+Enter value for eage: 46
+Enter value for did: 111
+old   1: insert into emp12 values(&eid,'&ename,'&eage,&did)
+new   1: insert into emp12 values(3,'c,'46,111)
+insert into emp12 values(3,'c,'46,111)
+                               *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> /
+Enter value for eid: 4
+Enter value for ename: d
+Enter value for eage: 56
+Enter value for did: 111
+old   1: insert into emp12 values(&eid,'&ename,'&eage,&did)
+new   1: insert into emp12 values(4,'d,'56,111)
+insert into emp12 values(4,'d,'56,111)
+                               *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> /
+Enter value for eid: 5
+Enter value for ename: e
+Enter value for eage: 34
+Enter value for did: 333
+old   1: insert into emp12 values(&eid,'&ename,'&eage,&did)
+new   1: insert into emp12 values(5,'e,'34,333)
+insert into emp12 values(5,'e,'34,333)
+                               *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> /
+Enter value for eid: 6
+Enter value for ename: f
+Enter value for eage: 34
+Enter value for did: 333
+old   1: insert into emp12 values(&eid,'&ename,'&eage,&did)
+new   1: insert into emp12 values(6,'f,'34,333)
+insert into emp12 values(6,'f,'34,333)
+                               *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> 7
+SP2-0226: Invalid line number
+SQL> /
+Enter value for eid: 7
+Enter value for ename: g
+Enter value for eage: 27
+Enter value for did: 333
+old   1: insert into emp12 values(&eid,'&ename,'&eage,&did)
+new   1: insert into emp12 values(7,'g,'27,333)
+insert into emp12 values(7,'g,'27,333)
+                               *
+ERROR at line 1:
+ORA-00917: missing comma
+
+
+SQL> select * from emp12;
+
+no rows selected
+
+SQL> insert into emp12 values(&eid,'&ename',&eage,&did);
+Enter value for eid: 1
+Enter value for ename: a
+Enter value for eage: 23
+Enter value for did: 111
+old   1: insert into emp12 values(&eid,'&ename',&eage,&did)
+new   1: insert into emp12 values(1,'a',23,111)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 2
+Enter value for ename: b
+Enter value for eage: 34
+Enter value for did: 222
+old   1: insert into emp12 values(&eid,'&ename',&eage,&did)
+new   1: insert into emp12 values(2,'b',34,222)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 3
+Enter value for ename: c
+Enter value for eage: 46
+Enter value for did: 111
+old   1: insert into emp12 values(&eid,'&ename',&eage,&did)
+new   1: insert into emp12 values(3,'c',46,111)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 4
+Enter value for ename: d
+Enter value for eage: 56
+Enter value for did: 111
+old   1: insert into emp12 values(&eid,'&ename',&eage,&did)
+new   1: insert into emp12 values(4,'d',56,111)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 6
+Enter value for ename: f
+Enter value for eage: 34
+Enter value for did: 333
+old   1: insert into emp12 values(&eid,'&ename',&eage,&did)
+new   1: insert into emp12 values(6,'f',34,333)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 7
+Enter value for ename: g
+Enter value for eage: 27
+Enter value for did: 333
+old   1: insert into emp12 values(&eid,'&ename',&eage,&did)
+new   1: insert into emp12 values(7,'g',27,333)
+
+1 row created.
+
+SQL> select * from emp12;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         1 a                       23        111
+         2 b                       34        222
+         3 c                       46        111
+         4 d                       56        111
+         6 f                       34        333
+         7 g                       27        333
+
+6 rows selected.
+
+SQL> insert into sports values(&eid,'&ename',&eage,&did);
+Enter value for eid: 1
+Enter value for ename: a
+Enter value for eage: 23
+Enter value for did: 111
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(1,'a',23,111)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 2
+Enter value for ename: b
+Enter value for eage: 34
+Enter value for did: 222
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(2,'b',34,222)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 3
+Enter value for ename: c
+Enter value for eage: 46
+Enter value for did: 111
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(3,'c',46,111)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 4
+Enter value for ename: d
+Enter value for eage: 56
+Enter value for did: 111
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(4,'d',56,111)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 5
+Enter value for ename: e
+Enter value for eage: 26
+Enter value for did: 333
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(5,'e',26,333)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 6
+Enter value for ename: f
+Enter value for eage: 34
+Enter value for did: 333
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(6,'f',34,333)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 7
+Enter value for ename: h
+Enter value for eage: 44
+Enter value for did: 222
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(7,'h',44,222)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 10
+Enter value for ename: j
+Enter value for eage: 22
+Enter value for did: 333
+old   1: insert into sports values(&eid,'&ename',&eage,&did)
+new   1: insert into sports values(10,'j',22,333)
+
+1 row created.
+
+SQL> select * from sports;
+
+       EID ENAME              EAGE        DID
+---------- ------------ ---------- ----------
+         1 a                    23        111
+         2 b                    34        222
+         3 c                    46        111
+         4 d                    56        111
+         5 e                    26        333
+         6 f                    34        333
+         7 h                    44        222
+        10 j                    22        333
+
+8 rows selected.
+
+SQL> update sports set eid=8 where ename='h';
+
+1 row updated.
+
+SQL> select * from sports;
+
+       EID ENAME              EAGE        DID
+---------- ------------ ---------- ----------
+         1 a                    23        111
+         2 b                    34        222
+         3 c                    46        111
+         4 d                    56        111
+         5 e                    26        333
+         6 f                    34        333
+         8 h                    44        222
+        10 j                    22        333
+
+8 rows selected.
+
+SQL> select * from emp12 union select * from sports;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         1 a                       23        111
+         2 b                       34        222
+         3 c                       46        111
+         4 d                       56        111
+         5 e                       26        333
+         6 f                       34        333
+         7 g                       27        333
+         8 h                       44        222
+        10 j                       22        333
+
+9 rows selected.
+
+SQL> select * from emp12 intersect select * from sports;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         1 a                       23        111
+         2 b                       34        222
+         3 c                       46        111
+         4 d                       56        111
+         6 f                       34        333
+
+SQL> select * from emp12 minus select * from sports;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         7 g                       27        333
+
+SQL> select * from sports minus select * from emp12;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         5 e                       26        333
+         8 h                       44        222
+        10 j                       22        333
+
+SQL> insert into epay values(&eid,&esal,&eaccno);
+Enter value for eid: 1
+Enter value for esal: 3000
+Enter value for eaccno: 245555
+old   1: insert into epay values(&eid,&esal,&eaccno)
+new   1: insert into epay values(1,3000,245555)
+insert into epay values(1,3000,245555)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> create table epay (eid number(3),esal number(10),eaccno number(6));
+
+Table created.
+
+SQL> insert into epay values(&eid,&esal,&eaccno);
+Enter value for eid: 1
+Enter value for esal: 3000
+Enter value for eaccno: 245555
+old   1: insert into epay values(&eid,&esal,&eaccno)
+new   1: insert into epay values(1,3000,245555)
+
+1 row created.
+
+SQL> 2
+SP2-0226: Invalid line number
+SQL> /
+Enter value for eid: 2
+Enter value for esal: 4000
+Enter value for eaccno: 234322
+old   1: insert into epay values(&eid,&esal,&eaccno)
+new   1: insert into epay values(2,4000,234322)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 3
+Enter value for esal: 5000
+Enter value for eaccno: 333456
+old   1: insert into epay values(&eid,&esal,&eaccno)
+new   1: insert into epay values(3,5000,333456)
+
+1 row created.
+
+SQL> /
+Enter value for eid: 4
+Enter value for esal: 1500
+Enter value for eaccno: 23444
+old   1: insert into epay values(&eid,&esal,&eaccno)
+new   1: insert into epay values(4,1500,23444)
+
+1 row created.
+
+SQL> select * from epay;
+
+       EID       ESAL     EACCNO
+---------- ---------- ----------
+         1       3000     245555
+         2       4000     234322
+         3       5000     333456
+         4       1500      23444
+
+SQL> /
+
+       EID       ESAL     EACCNO
+---------- ---------- ----------
+         1       3000     245555
+         2       4000     234322
+         3       5000     333456
+         4       1500      23444
+
+SQL> insert into epay values(&eid,&esal,&eaccno);
+Enter value for eid: 14
+Enter value for esal: 6000
+Enter value for eaccno: 8888
+old   1: insert into epay values(&eid,&esal,&eaccno)
+new   1: insert into epay values(14,6000,8888)
+
+1 row created.
+
+SQL> slect * from epay;
+SP2-0734: unknown command beginning "slect * fr..." - rest of line ignored.
+SQL> slect * from epay12;
+SP2-0734: unknown command beginning "slect * fr..." - rest of line ignored.
+SQL> select * from epay12;
+select * from epay12
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from epay;
+
+       EID       ESAL     EACCNO
+---------- ---------- ----------
+         1       3000     245555
+         2       4000     234322
+         3       5000     333456
+         4       1500      23444
+        14       6000       8888
+
+SQL> select * from emp12;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         1 a                       23        111
+         2 b                       34        222
+         3 c                       46        111
+         4 d                       56        111
+         6 f                       34        333
+         7 g                       27        333
+
+6 rows selected.
+
+SQL> select emp12.ename,epay.sal from epay,emp12 where emp12.eid=epay.eid;
+select emp12.ename,epay.sal from epay,emp12 where emp12.eid=epay.eid
+                   *
+ERROR at line 1:
+ORA-00904: "EPAY"."SAL": invalid identifier
+
+
+SQL> select emp12.ename,epay.esal from epay,emp12 where emp12.eid=epay.eid;
+
+ENAME                 ESAL
+--------------- ----------
+a                     3000
+b                     4000
+c                     5000
+d                     1500
+
+SQL> select emp12.ename,epay.esal from emp12 inner join epay on emp12.eid=epay.eid;
+
+ENAME                 ESAL
+--------------- ----------
+a                     3000
+b                     4000
+c                     5000
+d                     1500
+
+SQL> select emp12.ename,epay.esal from emp12 left join epay on emp12.eid=epay.eid;
+
+ENAME                 ESAL
+--------------- ----------
+a                     3000
+b                     4000
+c                     5000
+d                     1500
+f
+g
+
+6 rows selected.
+
+SQL> select emp12.ename,epay.esal from emp12 right join epay on emp12.eid=epay.eid;
+
+ENAME                 ESAL
+--------------- ----------
+a                     3000
+b                     4000
+c                     5000
+d                     1500
+                      6000
+
+SQL> select emp12.ename,epay.esal from emp12 full outer join epay on emp12.eid=epay.eid;
+
+ENAME                 ESAL
+--------------- ----------
+a                     3000
+b                     4000
+c                     5000
+d                     1500
+f
+g
+                      6000
+
+7 rows selected.
+
+SQL> select * from epay;
+
+       EID       ESAL     EACCNO
+---------- ---------- ----------
+         1       3000     245555
+         2       4000     234322
+         3       5000     333456
+         4       1500      23444
+        14       6000       8888
+
+SQL> select * from emp12;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         1 a                       23        111
+         2 b                       34        222
+         3 c                       46        111
+         4 d                       56        111
+         6 f                       34        333
+         7 g                       27        333
+
+SQL> select max(eage) from emp12;
+
+ MAX(EAGE)
+----------
+        56
+
+SQL> select did,max(eage) from emp12 group by did;
+
+       DID  MAX(EAGE)
+---------- ----------
+       222         34
+       333         34
+       111         56
+
+SQL> select ename from emp12 where eage=56;
+
+ENAME
+---------------
+d
+
+SQL> select max(eage) from emp12;
+
+ MAX(EAGE)
+----------
+        56
+
+SQL> select eid,ename,did from emp12 where eage=(select max(eage) from emp12);
+
+       EID ENAME                  DID
+---------- --------------- ----------
+         4 d                      111
+
+SQL> select eid,ename,did from emp12 where eage in(select max(eage) from emp12 group by did);
+
+       EID ENAME                  DID
+---------- --------------- ----------
+         2 b                      222
+         4 d                      111
+         6 f                      333
+
+SQL> select * from emp12;
+
+       EID ENAME                 EAGE        DID
+---------- --------------- ---------- ----------
+         1 a                       23        111
+         2 b                       34        222
+         3 c                       46        111
+         4 d                       56        111
+         6 f                       34        333
+         7 g                       27        333
+
+6 rows selected.
+
+SQL> select * from epay;
+
+       EID       ESAL     EACCNO
+---------- ---------- ----------
+         1       3000     245555
+         2       4000     234322
+         3       5000     333456
+         4       1500      23444
+SQL> select max(esal) from epay;
+
+ MAX(ESAL)
+----------
+      5000
+SQL> select eid from epay12 where esal=(select max(salary) from epay),
+
+EID
+-------------
+2
+
+SQL> select ename from emp12 where eid=(select eid from epay12 where esal=(select max(salary) from epay));
+
+ENAME
+-------
+b
+
+
+PL/SQL Advantage
+1 Multiple Query execution
+2 Get the input directly from the end user
+3 
+
+Steps:
+Declare
+Begin 
+End
+
+
+ 
+SQL> ed sss
+
+SQL> set server output on;
+SQL> declare
+        a int;
+        b int;
+        c int;
+      begin
+        a:=&a;
+        b:=&b;
+        c:=&a+b;
+        dbms_output.Put_line('add value'||c);
+        end;
+         /
+enter value for a: 23
+old 6:    a:=&a;
+new 6:    a:=&23;
+enter value for b: 34
+old 6:    b:=&b;
+new 6:    b:=&34;
+add value = 57
+
+PL/SQL procesure successfully completed
